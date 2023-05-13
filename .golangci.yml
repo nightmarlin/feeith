@@ -1,0 +1,14 @@
+run:
+  modules-download-mode: readonly # Fail if go.mod must be updated
+issues:
+  max-same-issues: 0 # Disable limit for faster dev cycle
+  max-issues-per-linter: 0
+linters:
+  enable:
+    - bodyclose # Ensure HTTP Response bodies are closed
+    - containedctx # Ensure contexts are not stored. This is bad practice.
+    - durationcheck # Ensure durations are not used incorrectly.
+    - goimports # Ensures code complies with goimports. Use --fix --new to autofix.
+    - nolintlint # Ensures `nolint`s are correctly used and commented
+    - tenv # Ensures tests call t.Setenv instead of os.Setenv
+    - unconvert # Removes unnecessary type conversion
